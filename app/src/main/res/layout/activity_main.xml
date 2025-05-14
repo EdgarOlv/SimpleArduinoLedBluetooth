@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Conectar ao Arduino" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ligar LED"
-        android:layout_marginTop="16dp" />
+        <ImageView
+            android:id="@+id/retryButton"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_gravity="right"
+            android:layout_marginTop="20sp"
+            android:visibility="invisible"
+            android:onClick="reConnect"
+            android:layout_marginRight="20sp"
+            app:srcCompat="@drawable/retryicon"
+            app:tint="#000" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Desligar LED"
-        android:layout_marginTop="16dp" />
+        <ImageView
+            android:id="@+id/switchButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="160sp"
+            android:onClick="sendData"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/switchicon"
+            app:tint="#F00" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dispositivo não conectado"
-        android:layout_marginTop="32dp"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/connectionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:layout_marginTop="100sp"
+            android:text="Disconnected" />
+    </LinearLayout>
 </LinearLayout>
